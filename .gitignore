@@ -1,3 +1,12 @@
+node_modules/
+.pnpm-store/
+
+coverage/     
+playwright-report/
+test-results/          
+blob-report/   
+playwright/.cache/
+
 .vscode/
 .vs/
 *.user
