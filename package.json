@@ -4,6 +4,10 @@
   "type": "module",
   "description": "Менеджер дедлайнів",
   "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .js,.vue --fix",
     "test:unit": "vitest",
     "test:unit:coverage": "vitest run --coverage",
     "test:e2e": "playwright test",
@@ -11,8 +15,11 @@
     "test": "npm run test:unit && npm run test:e2e"
   },
   "devDependencies": {
-    "vitest": "^1.6.1",
+    "@playwright/test": "^1.41.1",
     "@vitest/coverage-v8": "^1.6.1",
-    "@playwright/test": "^1.41.1"
+    "eslint": "^9.39.4",
+    "eslint-plugin-vue": "^10.8.0",
+    "vite": "^5.4.21",
+    "vitest": "^1.6.1"
   }
 }
