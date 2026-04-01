@@ -4,11 +4,24 @@ import posthog from 'posthog-js';
 
 posthog.init('phc_tzskTcWRakSbaCiAuEHGjceP6SZoGZMJDjdBpMtz7yTU', {
     // Адреса сервера (API Host)
-    api_host: 'https://app.posthog.com',
-
+    api_host: window.location.origin + '/ingest',
     person_profiles: 'always',
 });
 
+
+posthog.onFeatureFlags(() => {
+    const dateInput = document.getElementById('deadline-date');
+    const dateLabel = document.querySelector('label[for="deadline-date"]');
+
+    if (posthog.isFeatureEnabled('show-date-picker')) {
+        dateInput.style.setProperty('display', 'block', 'important');
+        if (dateLabel) dateLabel.style.setProperty('display', 'block', 'important');
+    } else {
+        // Додаємо !important, щоб точно приховати
+        dateInput.style.setProperty('display', 'none', 'important');
+        if (dateLabel) dateLabel.style.setProperty('display', 'none', 'important');
+    }
+});
 
 const form = document.getElementById('deadline-form');
 const taskList = document.getElementById('task-list');
