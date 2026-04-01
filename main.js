@@ -21,6 +21,14 @@ form.addEventListener('submit', (e) => {
 
     try {
         const info = getDeadlineInfo(date);
+
+        posthog.capture('task_created', {
+            task_name: name,
+            status: info.status,
+            days_left: info.days,
+            is_urgent: info.urgent
+        });
+
         const taskHtml = `
             <div class="task-item">
                 <strong>${name}</strong> — 
