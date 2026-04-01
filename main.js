@@ -1,5 +1,15 @@
 import { getDeadlineInfo } from './utilits/deadline.js';
 
+import posthog from 'posthog-js';
+
+posthog.init('phc_tzskTcWRakSbaCiAuEHGjceP6SZoGZMJDjdBpMtz7yTU', {
+    // Адреса сервера (API Host)
+    api_host: 'https://eu.posthog.com',
+
+    person_profiles: 'always',
+});
+
+
 const form = document.getElementById('deadline-form');
 const taskList = document.getElementById('task-list');
 
