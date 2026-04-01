@@ -4,7 +4,7 @@ import posthog from 'posthog-js';
 
 posthog.init('phc_tzskTcWRakSbaCiAuEHGjceP6SZoGZMJDjdBpMtz7yTU', {
     // Адреса сервера (API Host)
-    api_host: 'https://eu.posthog.com',
+    api_host: 'https://app.posthog.com',
 
     person_profiles: 'always',
 });
