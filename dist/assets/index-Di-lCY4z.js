@@ -1,0 +1,8 @@
+(function(){const s=document.createElement("link").relList;if(s&&s.supports&&s.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))r(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const i of t.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&r(i)}).observe(document,{childList:!0,subtree:!0});function o(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function r(e){if(e.ep)return;e.ep=!0;const t=o(e);fetch(e.href,t)}})();function u(n,s=new Date){if(!n||isNaN(new Date(n)))throw new Error("Invalid date");const o=new Date(n);o.setHours(0,0,0,0);const r=new Date(s);r.setHours(0,0,0,0);const e=o-r,t=Math.ceil(e/(1e3*60*60*24));return t<0?{days:t,status:"Прострочено",urgent:!0}:t===0?{days:0,status:"Сьогодні!",urgent:!0}:t<=3?{days:t,status:"Скоро",urgent:!0}:{days:t,status:"Вчасно",urgent:!1}}const a=document.getElementById("deadline-form"),c=document.getElementById("task-list");a.addEventListener("submit",n=>{n.preventDefault();const s=document.getElementById("task-name").value,o=document.getElementById("deadline-date").value;try{const r=u(o),e=`
+            <div class="task-item">
+                <strong>${s}</strong> — 
+                <span class="${r.urgent?"urgent":"on-time"}">
+                    ${r.status} (днів: ${r.days})
+                </span>
+            </div>
+        `;c.insertAdjacentHTML("beforeend",e),a.reset()}catch(r){alert("Помилка: "+r.message)}});const d="Production Mode";document.getElementById("app-status").innerText=d;

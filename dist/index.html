@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Менеджер Дедлайнів</title>
+    <style>
+        .urgent { color: red; font-weight: bold; }
+        .on-time { color: green; }
+        .task-item { margin-bottom: 10px; border-bottom: 1px solid #ccc; }
+    </style>
+  <script type="module" crossorigin src="/assets/index-Di-lCY4z.js"></script>
+</head>
+<body>
+    <h1>Мій Менеджер Дедлайнів</h1>
+    <p>Статус:<span id="app-status">Завантаження...</span></p>
+    <form id="deadline-form">
+        <input type="text" id="task-name" placeholder="Назва завдання" required>
+        <input type="date" id="deadline-date" required>
+        <button type="submit" id="add-task-btn">Додати завдання</button>
+    </form>
+
+    <div id="task-list">
+    </div>
+
+</body>
+</html>
