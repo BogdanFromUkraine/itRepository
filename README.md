@@ -1,5 +1,7 @@
 # My Simple HTML Website (MVP)
 
+[![CI/CD Pipeline](https://github.com/BogdanFromUkraine/itRepository/actions/workflows/ci-cd.yml/badge.svg?branch=main)](https://github.com/BogdanFromUkraine/itRepository/actions/workflows/ci-cd.yml)
+
 ### Опис проєкту
 Це навчальний проєкт для лабораторної роботи №1. Основна ідея — створення простої сторінки-візитки з використанням HTML для відпрацювання навичок роботи з Git.
 
